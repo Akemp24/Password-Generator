@@ -4,14 +4,32 @@ var generateBtn = document.querySelector("#generate");
 // write function for creating everything needed for password.
 function generatePassword() {
     // write variable for the length of the password. ( 8 to 128)
-    var length = prompt("How long would you like the password? Choose between 8 to 128 characters.")
+    var length = prompt("How long would you like the password? Choose between 8 to 128 characters.");
     if (length < 8 || length > 128) {
-        console.log("Please choose a password length between 8 to 128 characters.")
-    } else if ( NaN(length) ) {
-        console.log ("Please enter a valid number.")
+        return "Please choose a password length between 8 to 128 characters.";
+        // may or may not need === true/false. Not sure ask about it.
+     } else if ( isNan(length)) {
+        return "This is not a number";
     } else {
-        alert("Your password will be " + length + " characters long.")
+        alert("Your password will be " + length + " characters long.");
     };
+
+// Confirm whether or not to include lowercase
+     var lowerCase = confirm("Would you like to include lowercase letters?");
+     if (lowerCase) {
+        alert("Your password will have lowercase letters.")
+     } else {
+        alert("Your password will not have lowercase letters.")
+     }
+
+
+// Confirm whether or not to include uppercase
+
+// Confirm whether or not to include numeric
+
+// Confirm whether or not to include special characters
+
+
 
 }
 //  Promted for lowercase, uppercase, numeric, and/or special characters
