@@ -17,14 +17,19 @@ function generatePassword() {
 // Confirm whether or not to include lowercase
      var lowerCase = confirm("Would you like to include lowercase letters?");
      if (lowerCase) {
-        alert("Your password will have lowercase letters.")
+        alert("Your password will have lowercase letters.");
      } else {
-        alert("Your password will not have lowercase letters.")
-     }
+        alert("Your password will not have lowercase letters.");
+     };
 
 
 // Confirm whether or not to include uppercase
-
+     var upperCase = confirm("Would you like to include uppercase letters?");
+     if (upperCase) {
+        alert("Your password will have uppercase letters.");
+     } else {
+        alert("Your password will not have lowercase letters.");
+     };
 // Confirm whether or not to include numeric
 
 // Confirm whether or not to include special characters
