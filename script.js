@@ -1,18 +1,29 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var lowerCaseArr = ["a", "b", "c"];
+var upperCaseArr = ["A", "B", "C"];
+var numbers = ["1", "2", "3"];
+var specialChararr = ["!", "@"];
 // write function for creating everything needed for password.
 function generatePassword() {
-    // write variable for the length of the password. ( 8 to 128)
-    var length = prompt("How long would you like the password? Choose between 8 to 128 characters.");
-    if (length < 8 || length > 128) {
-        return "Please choose a password length between 8 to 128 characters.";
-        // may or may not need === true/false. Not sure ask about it.
-     } else if ( isNan(length)) {
-        return "This is not a number";
-    } else {
-        alert("Your password will be " + length + " characters long.");
-    };
+   
+   
+   // write variable for the length of the password. ( 8 to 128)
+      var pwLength = prompt("How long would you like the password? Choose between 8 to 128 characters.");
+      
+      if (pwLength < 8 || pwLength > 128) {
+         alert("Please choose a password length between 8 to 128 characters.");
+         console.log(pwLength);
+         return generatePassword();
+      } else if (isNaN(pwLength)) {
+         alert("This is not a number");
+         console.log(pwLength);
+         return generatePassword();
+     };
+
+     
+
+  
 
 // Confirm whether or not to include lowercase
      var lowerCase = confirm("Would you like to include lowercase letters?");
@@ -31,15 +42,50 @@ function generatePassword() {
         alert("Your password will not have lowercase letters.");
      };
 // Confirm whether or not to include numeric
-
+     var numeric = confirm("Would you like to include numbers?");
+     if (numeric) {
+      alert("Your password will include numbers.");
+     } else {
+      alert("Your password will not include numbers.");
+     };
 // Confirm whether or not to include special characters
+var specialChar = confirm("Would you like to include numbers?");
+     if (specialChar) {
+      alert("Your password will include special characters.");
+     } else {
+      alert("Your password will not include special characters.");
+     };
 
 
+     var finalPassword = "Generated Password";
+     var possibleChars = [];
 
-}
+     if (lowerCase){
+      possibleChars.concat(lowerCaseArr);
+     }
+     if (upperCase){
+      possibleChars.concat(upperCaseArr);
+     }
+   //   for loop. 
+     function createPassword () {
+      for(i=0; i < pwLength; i++){
+         finalPassword = finalPassword + randomizerd(possibleChars)
+      }
+
+     };
+
+     function randomize(arr) {
+      // randomize array
+      return arr[Math.floor(Math.random() * arr.length)];
+     }
+     return finalPassword;
+
+
+};
 //  Promted for lowercase, uppercase, numeric, and/or special characters
 //  When answered the input should be validated and at least one character type should be selected
 //  when all promps answered the password generated
+
 //  password either displayed in alert or written on the page.
 
 // Write password to the #password input
