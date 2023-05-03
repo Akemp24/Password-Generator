@@ -22,7 +22,7 @@ function generatePassword() {
      };
 
      
-
+//  Prompted for lowercase, uppercase, numeric, and/or special characters
   
 
 // Confirm whether or not to include lowercase
@@ -56,15 +56,27 @@ var specialChar = confirm("Would you like to include numbers?");
       alert("Your password will not include special characters.");
      };
 
+   //   If selected none then have to select one
+if (lowerCase === false && upperCase === false && numeric === false && specialChar === false) {
+    alert("Please select at least one character type.");
+}
+
 
      var finalPassword = "Generated Password";
      var possibleChars = [];
 
+     //  When answered the input should be validated and at least one character type should be selected
      if (lowerCase){
       possibleChars.concat(lowerCaseArr);
      }
      if (upperCase){
       possibleChars.concat(upperCaseArr);
+     }
+     if (numeric) {
+      possibleChars.concat(numbers);
+     }
+     if (specialChar) {
+      possibleChars.concat(specialChararr);
      }
    //   for loop. 
      function createPassword () {
@@ -82,8 +94,10 @@ var specialChar = confirm("Would you like to include numbers?");
 
 
 };
-//  Promted for lowercase, uppercase, numeric, and/or special characters
-//  When answered the input should be validated and at least one character type should be selected
+
+
+
+
 //  when all promps answered the password generated
 
 //  password either displayed in alert or written on the page.
