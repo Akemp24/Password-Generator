@@ -1,12 +1,11 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var lowerCaseArr = ["a", "b", "c"];
-var upperCaseArr = ["A", "B", "C"];
-var numbers = ["1", "2", "3"];
-var specialChararr = ["!", "@"];
+var lowerCaseArr = "abcdefghijklmnopqrstuvwxyz".split("");
+var upperCaseArr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+var numbers = "123456789".split("");
+var specialChararr = "!@#$%^&*".split();
 // write function for creating everything needed for password.
 function generatePassword() {
-   
    
    // write variable for the length of the password. ( 8 to 128)
       var pwLength = prompt("How long would you like the password? Choose between 8 to 128 characters.");
@@ -19,12 +18,9 @@ function generatePassword() {
          alert("This is not a number");
          console.log(pwLength);
          return generatePassword();
-     };
+     };  
 
-     
 //  Prompted for lowercase, uppercase, numeric, and/or special characters
-  
-
 // Confirm whether or not to include lowercase
      var lowerCase = confirm("Would you like to include lowercase letters?");
      if (lowerCase) {
@@ -39,8 +35,9 @@ function generatePassword() {
      if (upperCase) {
         alert("Your password will have uppercase letters.");
      } else {
-        alert("Your password will not have lowercase letters.");
+        alert("Your password will not have uppercase letters.");
      };
+
 // Confirm whether or not to include numeric
      var numeric = confirm("Would you like to include numbers?");
      if (numeric) {
@@ -48,8 +45,9 @@ function generatePassword() {
      } else {
       alert("Your password will not include numbers.");
      };
+
 // Confirm whether or not to include special characters
-var specialChar = confirm("Would you like to include numbers?");
+var specialChar = confirm("Would you like to include special characters?");
      if (specialChar) {
       alert("Your password will include special characters.");
      } else {
@@ -61,47 +59,47 @@ if (lowerCase === false && upperCase === false && numeric === false && specialCh
     alert("Please select at least one character type.");
 }
 
-
-     var finalPassword = "Generated Password";
+     var finalPassword = "";
      var possibleChars = [];
 
      //  When answered the input should be validated and at least one character type should be selected
      if (lowerCase){
-      possibleChars.concat(lowerCaseArr);
+      possibleChars.push(lowerCaseArr);
      }
      if (upperCase){
-      possibleChars.concat(upperCaseArr);
+      possibleChars.push(upperCaseArr);
      }
      if (numeric) {
-      possibleChars.concat(numbers);
+      possibleChars.push(numbers);
      }
      if (specialChar) {
-      possibleChars.concat(specialChararr);
-     }
+      possibleChars.push(specialChararr);
+     };
+
+     
    //   for loop. 
      function createPassword () {
       for(i=0; i < pwLength; i++){
-         finalPassword = finalPassword + randomizerd(possibleChars)
-      }
+         finalPassword = finalPassword + randomize(possibleChars)
+         console.log(finalPassword);
+      } 
 
      };
 
      function randomize(arr) {
       // randomize array
-      return arr[Math.floor(Math.random() * arr.length)];
+      console.log(arr);
+      var randomChar = arr[Math.floor(Math.random() * arr.length)];
+      console.log(randomChar);
+      return randomChar;
      }
+     createPassword();
      return finalPassword;
-
-
-};
-
-
-
 
 //  when all promps answered the password generated
 
 //  password either displayed in alert or written on the page.
-
+};
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
