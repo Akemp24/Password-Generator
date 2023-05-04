@@ -13,14 +13,12 @@ This is great if you need a new random password and can help users create a pass
 
 ## Usage
 
-In order to use this go to the following website:
+In order to use this go to the following website: https://akemp24.github.io/Password-Generator/
 Click on generate password and follow the prompts. (It should ask password length, if you want lowercase, uppercase, numeric, and/or special characters). Note you must choose at least one special character or else it will ask you to include.
 Once you've answered the prompts it should show a random password in the box shown.
 
+Website should look similar to below:
 
+![image of pw generator](./assets/pw-generator.png)
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+    
